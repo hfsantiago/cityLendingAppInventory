@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  marca: MyString
+  modelo: MyString
+  serial: MyString
+  url_factura: MyString
+  status: MyString
+  tecnologia_DD1: MyString
+  tecnologia_DD2: MyString
+  capacidad_DD1: MyString
+  capacidad_DD2: MyString
+  fecha_inicio_garantia: 2022-05-19
+  fecha_fin_garantia: 2022-05-19
+  observaciones: MyText
+  asset_type: one
+
+two:
+  marca: MyString
+  modelo: MyString
+  serial: MyString
+  url_factura: MyString
+  status: MyString
+  tecnologia_DD1: MyString
+  tecnologia_DD2: MyString
+  capacidad_DD1: MyString
+  capacidad_DD2: MyString
+  fecha_inicio_garantia: 2022-05-19
+  fecha_fin_garantia: 2022-05-19
+  observaciones: MyText
+  asset_type: two

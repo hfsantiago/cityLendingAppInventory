@@ -1,0 +1,52 @@
+<%= form_with(model: delivery_collect_record) do |form| %>
+  <% if delivery_collect_record.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(delivery_collect_record.errors.count, "error") %> prohibited this delivery_collect_record from being saved:</h2>
+
+      <ul>
+        <% delivery_collect_record.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :employee_id, style: "display: block" %>
+    <%= form.text_field :employee_id %>
+  </div>
+
+  <div>
+    <%= form.label :fecha, style: "display: block" %>
+    <%= form.date_field :fecha %>
+  </div>
+
+  <div>
+    <%= form.label :is_delivery, style: "display: block" %>
+    <%= form.check_box :is_delivery %>
+  </div>
+
+  <div>
+    <%= form.label :nombre_recibe, style: "display: block" %>
+    <%= form.text_field :nombre_recibe %>
+  </div>
+
+  <div>
+    <%= form.label :nombre_devuelve, style: "display: block" %>
+    <%= form.text_field :nombre_devuelve %>
+  </div>
+
+  <div>
+    <%= form.label :devolucion_observaciones, style: "display: block" %>
+    <%= form.text_area :devolucion_observaciones %>
+  </div>
+
+  <div>
+    <%= form.label :devolucion_estado_equipo, style: "display: block" %>
+    <%= form.text_area :devolucion_estado_equipo %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
