@@ -1,0 +1,47 @@
+<%= form_with(model: working_order) do |form| %>
+  <% if working_order.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(working_order.errors.count, "error") %> prohibited this working_order from being saved:</h2>
+
+      <ul>
+        <% working_order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :asset_id, style: "display: block" %>
+    <%= form.text_field :asset_id %>
+  </div>
+
+  <div>
+    <%= form.label :fecha_hora_apertura, style: "display: block" %>
+    <%= form.datetime_field :fecha_hora_apertura %>
+  </div>
+
+  <div>
+    <%= form.label :fecha_hora_cierre, style: "display: block" %>
+    <%= form.datetime_field :fecha_hora_cierre %>
+  </div>
+
+  <div>
+    <%= form.label :id_empleado_tecnico, style: "display: block" %>
+    <%= form.number_field :id_empleado_tecnico %>
+  </div>
+
+  <div>
+    <%= form.label :diagnostico_notas, style: "display: block" %>
+    <%= form.text_area :diagnostico_notas %>
+  </div>
+
+  <div>
+    <%= form.label :url_imagenes, style: "display: block" %>
+    <%= form.text_field :url_imagenes %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

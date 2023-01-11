@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 4) do
+ActiveRecord::Schema[7.0].define(version: 6) do
   create_table "asset_types", force: :cascade do |t|
     t.string "nombre"
     t.text "observaciones"
@@ -35,6 +35,15 @@ ActiveRecord::Schema[7.0].define(version: 4) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["asset_type_id"], name: "index_assets_on_asset_type_id"
+  end
+
+  create_table "delivery_collect_record_assets", force: :cascade do |t|
+    t.integer "delivery_collect_record_id", null: false
+    t.integer "asset_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["asset_id"], name: "index_delivery_collect_record_assets_on_asset_id"
+    t.index ["delivery_collect_record_id"], name: "index_dcra_on_delivery_collect_record_id"
   end
 
   create_table "delivery_collect_records", force: :cascade do |t|
@@ -64,6 +73,21 @@ ActiveRecord::Schema[7.0].define(version: 4) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "working_orders", force: :cascade do |t|
+    t.integer "asset_id", null: false
+    t.datetime "fecha_hora_apertura", precision: nil
+    t.datetime "fecha_hora_cierre", precision: nil
+    t.integer "id_empleado_tecnico"
+    t.text "diagnostico_notas"
+    t.string "url_imagenes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["asset_id"], name: "index_working_orders_on_asset_id"
+  end
+
   add_foreign_key "assets", "asset_types"
+  add_foreign_key "delivery_collect_record_assets", "assets"
+  add_foreign_key "delivery_collect_record_assets", "delivery_collect_records"
   add_foreign_key "delivery_collect_records", "employees"
+  add_foreign_key "working_orders", "assets"
 end

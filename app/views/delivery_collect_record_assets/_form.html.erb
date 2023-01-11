@@ -1,0 +1,27 @@
+<%= form_with(model: delivery_collect_record_asset) do |form| %>
+  <% if delivery_collect_record_asset.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(delivery_collect_record_asset.errors.count, "error") %> prohibited this delivery_collect_record_asset from being saved:</h2>
+
+      <ul>
+        <% delivery_collect_record_asset.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :delivery_collect_record_id, style: "display: block" %>
+    <%= form.text_field :delivery_collect_record_id %>
+  </div>
+
+  <div>
+    <%= form.label :asset_id, style: "display: block" %>
+    <%= form.text_field :asset_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

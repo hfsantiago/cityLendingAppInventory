@@ -1,0 +1,1 @@
+json.partial! "delivery_collect_record_assets/delivery_collect_record_asset", delivery_collect_record_asset: @delivery_collect_record_asset

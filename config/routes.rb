@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :working_orders
+  resources :delivery_collect_record_assets, only: [:index, :create]
   resources :assets
   resources :asset_types
   resources :delivery_collect_records

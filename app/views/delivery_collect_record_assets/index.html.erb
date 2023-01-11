@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Delivery collect record assets</h1>
+
+<div id="delivery_collect_record_assets">
+  <% @delivery_collect_record_assets.each do |delivery_collect_record_asset| %>
+    <%= render delivery_collect_record_asset %>
+    <p>
+      <%= link_to "Show this delivery collect record asset", delivery_collect_record_asset %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New delivery collect record asset", new_delivery_collect_record_asset_path %>
