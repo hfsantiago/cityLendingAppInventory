@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Working order activities</h1>
+
+<div id="working_order_activities">
+  <% @working_order_activities.each do |working_order_activity| %>
+    <%= render working_order_activity %>
+    <p>
+      <%= link_to "Show this working order activity", working_order_activity %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New working order activity", new_working_order_activity_path %>
