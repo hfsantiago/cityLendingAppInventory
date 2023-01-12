@@ -1,0 +1,57 @@
+<%= form_with(model: working_order_purchase_element) do |form| %>
+  <% if working_order_purchase_element.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(working_order_purchase_element.errors.count, "error") %> prohibited this working_order_purchase_element from being saved:</h2>
+
+      <ul>
+        <% working_order_purchase_element.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :working_order_id, style: "display: block" %>
+    <%= form.text_field :working_order_id %>
+  </div>
+
+  <div>
+    <%= form.label :nombre_elemento, style: "display: block" %>
+    <%= form.text_field :nombre_elemento %>
+  </div>
+
+  <div>
+    <%= form.label :cantidad, style: "display: block" %>
+    <%= form.number_field :cantidad %>
+  </div>
+
+  <div>
+    <%= form.label :url_compra, style: "display: block" %>
+    <%= form.text_field :url_compra %>
+  </div>
+
+  <div>
+    <%= form.label :observaciones, style: "display: block" %>
+    <%= form.text_area :observaciones %>
+  </div>
+
+  <div>
+    <%= form.label :comprado, style: "display: block" %>
+    <%= form.check_box :comprado %>
+  </div>
+
+  <div>
+    <%= form.label :fecha_solicitud, style: "display: block" %>
+    <%= form.date_field :fecha_solicitud %>
+  </div>
+
+  <div>
+    <%= form.label :fecha_compra, style: "display: block" %>
+    <%= form.date_field :fecha_compra %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

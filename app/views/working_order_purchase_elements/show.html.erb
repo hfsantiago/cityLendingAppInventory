@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @working_order_purchase_element %>
+
+<div>
+  <%= link_to "Edit this working order purchase element", edit_working_order_purchase_element_path(@working_order_purchase_element) %> |
+  <%= link_to "Back to working order purchase elements", working_order_purchase_elements_path %>
+
+  <%= button_to "Destroy this working order purchase element", @working_order_purchase_element, method: :delete %>
+</div>

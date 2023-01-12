@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :working_order_purchase_elements
   resources :working_order_activities
   resources :working_orders
   resources :delivery_collect_record_assets, only: [:index, :create]

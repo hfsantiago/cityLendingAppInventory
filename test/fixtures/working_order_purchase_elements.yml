@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  working_order: one
+  nombre_elemento: MyString
+  cantidad: 1
+  url_compra: MyString
+  observaciones: MyText
+  comprado: false
+  fecha_solicitud: 2023-01-12
+  fecha_compra: 2023-01-12
+
+two:
+  working_order: two
+  nombre_elemento: MyString
+  cantidad: 1
+  url_compra: MyString
+  observaciones: MyText
+  comprado: false
+  fecha_solicitud: 2023-01-12
+  fecha_compra: 2023-01-12

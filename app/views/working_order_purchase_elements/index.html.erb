@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Working order purchase elements</h1>
+
+<div id="working_order_purchase_elements">
+  <% @working_order_purchase_elements.each do |working_order_purchase_element| %>
+    <%= render working_order_purchase_element %>
+    <p>
+      <%= link_to "Show this working order purchase element", working_order_purchase_element %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New working order purchase element", new_working_order_purchase_element_path %>

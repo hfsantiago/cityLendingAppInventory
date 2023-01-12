@@ -1,0 +1,1 @@
+json.partial! "working_order_purchase_elements/working_order_purchase_element", working_order_purchase_element: @working_order_purchase_element
