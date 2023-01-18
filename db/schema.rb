@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 6) do
+ActiveRecord::Schema[7.0].define(version: 8) do
   create_table "asset_types", force: :cascade do |t|
     t.string "nombre"
     t.text "observaciones"
@@ -73,6 +73,30 @@ ActiveRecord::Schema[7.0].define(version: 6) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "working_order_activities", force: :cascade do |t|
+    t.integer "working_order_id", null: false
+    t.text "observaciones"
+    t.string "id_orden_servicio"
+    t.datetime "fecha_hora"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["working_order_id"], name: "index_working_order_activities_on_working_order_id"
+  end
+
+  create_table "working_order_purchase_elements", force: :cascade do |t|
+    t.integer "working_order_id", null: false
+    t.string "nombre_elemento"
+    t.integer "cantidad"
+    t.string "url_compra"
+    t.text "observaciones"
+    t.boolean "comprado"
+    t.date "fecha_solicitud"
+    t.date "fecha_compra"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["working_order_id"], name: "index_working_order_purchase_elements_on_working_order_id"
+  end
+
   create_table "working_orders", force: :cascade do |t|
     t.integer "asset_id", null: false
     t.datetime "fecha_hora_apertura", precision: nil
@@ -89,5 +113,7 @@ ActiveRecord::Schema[7.0].define(version: 6) do
   add_foreign_key "delivery_collect_record_assets", "assets"
   add_foreign_key "delivery_collect_record_assets", "delivery_collect_records"
   add_foreign_key "delivery_collect_records", "employees"
+  add_foreign_key "working_order_activities", "working_orders"
+  add_foreign_key "working_order_purchase_elements", "working_orders"
   add_foreign_key "working_orders", "assets"
 end
