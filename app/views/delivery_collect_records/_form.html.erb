@@ -1,4 +1,4 @@
-<%= form_with(model: delivery_collect_record) do |form| %>
+<%= form_with(model: delivery_collect_record, url: employee_delivery_collect_records_path(delivery_collect_record.employee_id) ) do |form| %>
   <% if delivery_collect_record.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(delivery_collect_record.errors.count, "error") %> prohibited this delivery_collect_record from being saved:</h2>
@@ -12,8 +12,8 @@
   <% end %>
 
   <div>
-    <%= form.label :employee_id, style: "display: block" %>
-    <%= form.text_field :employee_id %>
+    <%= label_tag('employee_name', 'Nombre del Empleado', style: "display: block")  %>
+    <%= @employee.nombres_apellidos %>
   </div>
 
   <div>
@@ -22,18 +22,18 @@
   </div>
 
   <div>
-    <%= form.label :is_delivery, style: "display: block" %>
+    <%= form.label :is_delivery, 'Es una entrega?', style: "display: block" %>
     <%= form.check_box :is_delivery %>
   </div>
 
   <div>
     <%= form.label :nombre_recibe, style: "display: block" %>
-    <%= form.text_field :nombre_recibe %>
+    <%= form.text_field :nombre_recibe, disabled: !delivery_collect_record.is_delivery %>
   </div>
 
   <div>
     <%= form.label :nombre_devuelve, style: "display: block" %>
-    <%= form.text_field :nombre_devuelve %>
+    <%= form.text_field :nombre_devuelve, disabled: delivery_collect_record.is_delivery %>
   </div>
 
   <div>

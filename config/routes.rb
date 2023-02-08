@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   resources :delivery_collect_record_assets, only: [:index, :create]
   resources :assets
   resources :asset_types
-  resources :delivery_collect_records
-  resources :employees
+  resources :employees do
+    resources :delivery_collect_records
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

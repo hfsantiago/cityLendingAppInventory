@@ -3,6 +3,7 @@
 <%= render @employee %>
 
 <div>
+  <%= link_to "Crear entrega/devolución",  new_employee_delivery_collect_record_path(@employee) %> |
   <%= link_to "Edit this employee", edit_employee_path(@employee) %> |
   <%= link_to "Back to employees", employees_path %>
 

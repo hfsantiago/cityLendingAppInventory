@@ -13,6 +13,8 @@ class DeliveryCollectRecordsController < ApplicationController
   # GET /delivery_collect_records/new
   def new
     @delivery_collect_record = DeliveryCollectRecord.new
+    @delivery_collect_record.is_delivery = true
+    set_employee
   end
 
   # GET /delivery_collect_records/1/edit
@@ -58,6 +60,10 @@ class DeliveryCollectRecordsController < ApplicationController
   end
 
   private
+    def set_employee
+      @employee = Employee.find(params[:employee_id])
+      @delivery_collect_record.employee_id = @employee.id
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_delivery_collect_record
       @delivery_collect_record = DeliveryCollectRecord.find(params[:id])

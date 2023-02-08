@@ -11,6 +11,7 @@
         <th>Cedula</th>
         <th>Position</th>
         <th></th>
+        <th></th>
       </tr>
       <% @employees.each do |employee| %>
         <tr>
@@ -19,7 +20,8 @@
           <td><%= employee.email %></td>
           <td><%= employee.cedula %></td>
           <td><%= employee.position %></td>
-          <td><%= link_to "Show employee", employee %></td>
+          <td><%= link_to "Show", employee %></td>
+          <td><%= link_to "Edit", edit_employee_path(employee)%></td>
         </tr>
       <% end %>
     </table>  
