@@ -38,12 +38,12 @@
 
   <div>
     <%= form.label :devolucion_observaciones, style: "display: block" %>
-    <%= form.text_area :devolucion_observaciones %>
+    <%= form.text_area :devolucion_observaciones, disabled: delivery_collect_record.is_delivery %>
   </div>
 
   <div>
     <%= form.label :devolucion_estado_equipo, style: "display: block" %>
-    <%= form.text_area :devolucion_estado_equipo %>
+    <%= form.text_area :devolucion_estado_equipo, disabled: delivery_collect_record.is_delivery %>
   </div>
 
   <div>
