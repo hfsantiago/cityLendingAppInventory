@@ -21,9 +21,9 @@
     <%= form.date_field :fecha %>
   </div>
 
-  <div>
+  <div data-controller="delivery_collect_record">
     <%= form.label :is_delivery, 'Es una entrega?', style: "display: block" %>
-    <%= form.check_box :is_delivery %>
+    <%= form.check_box :is_delivery, data: {action: "click->delivery_collect_record#enable_disable"} %>
   </div>
 
   <div>
