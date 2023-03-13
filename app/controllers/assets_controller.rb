@@ -13,6 +13,7 @@ class AssetsController < ApplicationController
   # GET /assets/new
   def new
     @asset = Asset.new
+    @asset_types = AssetType.all
   end
 
   # GET /assets/1/edit
