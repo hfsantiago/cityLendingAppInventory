@@ -33,7 +33,7 @@
 
   <div>
     <%= form.label :status, style: "display: block" %>
-    <%= form.text_field :status %>
+    <%= form.select :asset_type_id, options_for_select(@statuses) %>
   </div>
 
   <div>
@@ -73,7 +73,7 @@
 
   <div>
     <%= form.label :asset_type_id, style: "display: block" %>
-    <%= form.select :asset_type_id, options_from_collection_for_select (@asset_types, 'id', 'nombre') %>
+    <%= form.select :asset_type_id, options_from_collection_for_select(@asset_types, 'id', 'nombre') %>
   </div>
 
   <div>
