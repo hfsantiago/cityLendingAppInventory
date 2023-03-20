@@ -1,4 +1,4 @@
-class AssetsController < ApplicationController
+class EquipmentsController < ApplicationController
   before_action :set_asset, only: %i[ show edit update destroy ]
 
   # GET /assets or /assets.json
@@ -14,7 +14,7 @@ class AssetsController < ApplicationController
   def new
     @asset = Asset.new
     @asset_types = AssetType.all
-    @statuses = [['Mantenimiento', 'maintenance'],['Disponible','available]]
+    @statuses = [['Mantenimiento', 'maintenance'],['Disponible','available']]
   end
 
   # GET /assets/1/edit

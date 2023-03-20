@@ -1,4 +1,4 @@
-<%= form_with(model: asset) do |form| %>
+<%= form_with(model: asset, url: equipments_path) do |form| %>
   <% if asset.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(asset.errors.count, "error") %> prohibited this asset from being saved:</h2>
