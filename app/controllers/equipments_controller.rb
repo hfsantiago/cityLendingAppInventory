@@ -27,7 +27,7 @@ class EquipmentsController < ApplicationController
 
     respond_to do |format|
       if @asset.save
-        format.html { redirect_to asset_url(@asset), notice: "Asset was successfully created." }
+        format.html { redirect_to equipment_url(@asset), notice: "Asset was successfully created." }
         format.json { render :show, status: :created, location: @asset }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class EquipmentsController < ApplicationController
   def update
     respond_to do |format|
       if @asset.update(asset_params)
-        format.html { redirect_to asset_url(@asset), notice: "Asset was successfully updated." }
+        format.html { redirect_to equipment_url(@asset), notice: "Asset was successfully updated." }
         format.json { render :show, status: :ok, location: @asset }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class EquipmentsController < ApplicationController
     @asset.destroy
 
     respond_to do |format|
-      format.html { redirect_to assets_url, notice: "Asset was successfully destroyed." }
+      format.html { redirect_to equipments_url, notice: "Asset was successfully destroyed." }
       format.json { head :no_content }
     end
   end
