@@ -4,4 +4,7 @@ class Asset < ApplicationRecord
   def marca_modelo
     "#{marca} - #{modelo}"
   end
+  def self.statuses
+    [['Mantenimiento', 'maintenance'],['Disponible','available']]
+  end
 end

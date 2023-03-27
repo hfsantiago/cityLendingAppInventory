@@ -4,7 +4,7 @@
 
 <div>
   <%= link_to "Edit this asset", edit_equipment_path(@asset) %> |
-  <%= link_to "Back to assets", equipment s_path %>
+  <%= link_to "Back to assets", equipments_path %>
 
-  <%= button_to "Destroy this asset", @asset, method: :delete %>
+  <%= button_to "Destroy this asset", equipment_path(@asset), method: :delete %>
 </div>

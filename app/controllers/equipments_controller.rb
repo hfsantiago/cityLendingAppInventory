@@ -8,13 +8,14 @@ class EquipmentsController < ApplicationController
 
   # GET /assets/1 or /assets/1.json
   def show
+    @statuses = Asset.statuses
   end
 
   # GET /assets/new
   def new
     @asset = Asset.new
     @asset_types = AssetType.all
-    @statuses = [['Mantenimiento', 'maintenance'],['Disponible','available']]
+    @statuses = Asset.statuses
   end
 
   # GET /assets/1/edit
