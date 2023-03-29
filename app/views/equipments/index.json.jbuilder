@@ -1,1 +1,1 @@
-json.array! @assets, partial: "assets/asset", as: :asset
+json.array! @assets, partial: "equipments/asset", as: :equipment
