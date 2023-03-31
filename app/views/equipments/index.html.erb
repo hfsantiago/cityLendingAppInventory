@@ -4,11 +4,11 @@
 
 <div id="assets">
   <% @assets.each do |asset| %>
-    <%= render asset %>
+    <%= render partial: 'equipments/asset', locals: {asset: asset}%>
     <p>
-      <%= link_to "Show this asset", asset %>
+      <%= link_to "Show this asset", equipment_path(asset) %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New asset", new_asset_path %>
+<%= link_to "New asset", new_equipment_path %>
