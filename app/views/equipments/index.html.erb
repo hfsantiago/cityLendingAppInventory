@@ -3,12 +3,23 @@
 <h1>Assets</h1>
 
 <div id="assets">
+<table>
+  <tr>
+    <th>Marca</th>
+    <th>Modelo</th>
+    <th>Serial</th>
+    <th>Status</th>
+    <th></th>
+  </tr>
   <% @assets.each do |asset| %>
-    <%= render partial: 'equipments/asset', locals: {asset: asset}%>
-    <p>
-      <%= link_to "Show this asset", equipment_path(asset) %>
-    </p>
-  <% end %>
+    <tr>
+      <td><%= asset.marca %></td>
+      <td><%= asset.modelo %></td>
+      <td><%= asset.serial %></td>
+      <td><%= asset.status %></td>
+      <td><%= link_to('Show', equipment_path(asset)) %>  <%= link_to('Edit', edit_equipment_path(asset)) %></td>
+    </tr>
+  <% end %>    
+</table>
 </div>
-
 <%= link_to "New asset", new_equipment_path %>
