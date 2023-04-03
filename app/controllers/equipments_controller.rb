@@ -20,6 +20,8 @@ class EquipmentsController < ApplicationController
 
   # GET /assets/1/edit
   def edit
+    @statuses = Asset.statuses
+    @asset_types = AssetType.all
   end
 
   # POST /assets or /assets.json
