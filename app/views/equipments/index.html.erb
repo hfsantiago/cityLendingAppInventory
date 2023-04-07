@@ -16,7 +16,8 @@
       <td><%= asset.marca %></td>
       <td><%= asset.modelo %></td>
       <td><%= asset.serial %></td>
-      <td><%= asset.status %></td>
+      <td><%= asset.status_str %></td>
+    
       <td><%= link_to('Show', equipment_path(asset)) %>  <%= link_to('Edit', edit_equipment_path(asset)) %></td>
     </tr>
   <% end %>    
