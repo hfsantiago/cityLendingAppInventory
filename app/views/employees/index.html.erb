@@ -12,6 +12,7 @@
         <th>Position</th>
         <th></th>
         <th></th>
+        <th></th>
       </tr>
       <% @employees.each do |employee| %>
         <tr>
@@ -22,6 +23,7 @@
           <td><%= employee.position %></td>
           <td><%= link_to "Show", employee %></td>
           <td><%= link_to "Edit", edit_employee_path(employee)%></td>
+          <td><%= button_to "Destroy this employee", employee, method: :delete %></td>
         </tr>
       <% end %>
     </table>  
