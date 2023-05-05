@@ -22,4 +22,8 @@ export default class extends Controller {
       document.getElementById("delivery_collect_record_devolucion_estado_equipo").removeAttribute("disabled");
     }
   }
+
+  adding_assets() {
+    console.log('adding assets');
+  }
 }
