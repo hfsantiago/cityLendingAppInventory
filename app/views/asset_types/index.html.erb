@@ -11,7 +11,7 @@
   <% @asset_types.each do |asset_type| %>
     <tr>
       <td><%= asset_type.nombre %></td>
-      <td><%= link_to('Show', asset_type_path(asset_type)) %>  <%= link_to('Edit', edit_asset_type_path(asset_type)) %> <%= link_to "Destroy", asset_type, method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %> </td>
+      <td><%= link_to('Show', asset_type_path(asset_type)) %>  <%= link_to('Edit', edit_asset_type_path(asset_type)) %> <%= link_to "Destroy", asset_type, method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } unless asset_type.assets.any? %> </td>
     </tr>
   <% end %>
 </table>  
