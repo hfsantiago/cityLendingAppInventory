@@ -15,10 +15,12 @@ class DeliveryCollectRecordsController < ApplicationController
     @delivery_collect_record = DeliveryCollectRecord.new
     @delivery_collect_record.is_delivery = true
     set_employee
+    @employee_assets = []
   end
 
   # GET /delivery_collect_records/1/edit
   def edit
+    @employee_assets = @delivery_collect_record.delivery_collect_record_assets
   end
 
   # POST /delivery_collect_records or /delivery_collect_records.json

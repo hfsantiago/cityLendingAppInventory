@@ -47,6 +47,7 @@
   </div>
 
   <div>
+    <%= form.hidden_field :delivery_collect_record_assets_attributes %>
     <%= form.submit %>
   </div>
 <% end %>
@@ -60,6 +61,9 @@
     <th>nombre</th>
     <th></th>
     </tr>
+    <% @employee_assets.each do |d_c_r_a| %>
+      
+      <% end %>   
   </table>
 </div>
 <div id="assets-modal" class="modal" tabindex="-1">
