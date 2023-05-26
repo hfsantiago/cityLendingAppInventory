@@ -61,9 +61,15 @@
     <th>nombre</th>
     <th></th>
     </tr>
-    <% @employee_assets.each do |d_c_r_a| %>
-      
-      <% end %>   
+    <div id=asset_list_items>
+      <% @employee_assets.each do |d_c_r_a| %>
+        <tr>
+          <td><%= d_c_r_a.asset.id %></td>
+          <td><%= d_c_r_a.asset.marca_modelo %></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </div>   
   </table>
 </div>
 <div id="assets-modal" class="modal" tabindex="-1">

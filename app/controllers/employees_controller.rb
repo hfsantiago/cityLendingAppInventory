@@ -17,7 +17,7 @@ class EmployeesController < ApplicationController
 
   # GET /employees/1/edit
   def edit
-    @employee_assets = 
+    # @employee_assets = 
   end
 
   # POST /employees or /employees.json
