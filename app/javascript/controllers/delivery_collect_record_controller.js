@@ -25,6 +25,7 @@ export default class extends Controller {
 
   adding_assets() {
     console.log('adding assets'); 
-    console.log(document.getElementById("asset"));
+    var select_asset = document.getElementById( "asset" )
+    // TO DO
   }
 }
