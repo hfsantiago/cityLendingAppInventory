@@ -56,20 +56,22 @@
 </button>
 <div id="asset_list">
   <table>
+  <thead>
     <tr>
-    <th>id</th>
-    <th>nombre</th>
-    <th></th>
+      <th>id</th>
+      <th>nombre</th>
+      <th></th>
     </tr>
-    <div id=asset_list_items>
-      <% @employee_assets.each do |d_c_r_a| %>
-        <tr>
-          <td><%= d_c_r_a.asset.id %></td>
-          <td><%= d_c_r_a.asset.marca_modelo %></td>
-          <td></td>
-        </tr>
-      <% end %>
-    </div>   
+  </thead>
+  <tbody id="asset_list_items">
+    <% @employee_assets.each do |d_c_r_a| %>
+      <tr>
+        <td><%= d_c_r_a.asset.id %></td>
+        <td><%= d_c_r_a.asset.marca_modelo %></td>
+        <td></td>
+      </tr>
+    <% end %>  
+  </tbody>
   </table>
 </div>
 <div id="assets-modal" class="modal" tabindex="-1">

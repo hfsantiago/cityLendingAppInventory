@@ -24,8 +24,15 @@ export default class extends Controller {
   }
 
   adding_assets() {
-    console.log('adding assets'); 
-    var select_asset = document.getElementById( "asset" )
-    // TO DO
+    //console.log('adding assets'); 
+    var select_asset = document.getElementById( "asset" );
+    var select_option = select_asset.options[ select_asset.selectedIndex ];
+    //console.log(select_option.value)
+    //console.log(select_option.innerHTML)
+    //console.log( select_asset.options[ select_asset.selectedIndex ])
+    let tr = document.createElement("tr");
+    let td = document.createElement("td");
+    document.getElementById("asset_list_items").innerHTML = document.getElementById("asset_list_items") + "<tr><td>"+select_option.value+"</td><td>"+select_option.innerHTML+"</td><td></td></tr>")
+    // console.log(select_asset)
   }
 }
