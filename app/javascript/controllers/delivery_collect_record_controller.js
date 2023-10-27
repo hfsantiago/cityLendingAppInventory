@@ -25,16 +25,17 @@ export default class extends Controller {
 
   adding_assets() {
     //console.log('adding assets'); 
-    let hidden_val = document.getElementById('delivery_collect_record_delivery_collect_record_assets_attributes').value;
-    console.log(hidden_val);
-    if (hidden_val === "") {
-      let temp_val = [{asset_id: }]
-
-      console.log("vacio");
-    } 
+    
     var select_asset = document.getElementById( "asset" );
     var select_option = select_asset.options[ select_asset.selectedIndex ];
     //console.log(select_option.value)
+    let hidden_val = document.getElementById('delivery_collect_record_delivery_collect_record_assets_attributes').value;
+    console.log(hidden_val);
+    if (hidden_val === "") {
+      let temp_val = [{ asset_id: select_option.value }];
+      document.getElementById('delivery_collect_record_delivery_collect_record_assets_attributes').value = temp_val;
+      console.log("vacio");
+    } 
     //console.log(select_option.innerHTML)
     //console.log( select_asset.options[ select_asset.selectedIndex ])
     let tr = document.createElement("tr");
@@ -43,3 +44,4 @@ export default class extends Controller {
     // console.log(select_asset)
   }
 }
+
