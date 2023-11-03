@@ -33,8 +33,14 @@ export default class extends Controller {
     console.log(hidden_val);
     if (hidden_val === "") {
       let temp_val = [{ asset_id: select_option.value }];
-      document.getElementById('delivery_collect_record_delivery_collect_record_assets_attributes').value = temp_val;
+      document.getElementById('delivery_collect_record_delivery_collect_record_assets_attributes').value = JSON.stringify(temp_val);
       console.log("vacio");
+    }
+    else {
+      let temp_val = { asset_id: select_option.value };
+      let json_hidden_val = JSON.parse(hidden_val);
+      json_hidden_val.push(temp_val);
+      document.getElementById('delivery_collect_record_delivery_collect_record_assets_attributes').value = JSON.stringify(json_hidden_val);
     } 
     //console.log(select_option.innerHTML)
     //console.log( select_asset.options[ select_asset.selectedIndex ])
