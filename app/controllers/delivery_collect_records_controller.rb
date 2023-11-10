@@ -4,10 +4,12 @@ class DeliveryCollectRecordsController < ApplicationController
   # GET /delivery_collect_records or /delivery_collect_records.json
   def index
     @delivery_collect_records = DeliveryCollectRecord.all
+    @employee = Employee.find(params[:employee_id])
   end
 
   # GET /delivery_collect_records/1 or /delivery_collect_records/1.json
   def show
+    
   end
 
   # GET /delivery_collect_records/new
@@ -29,7 +31,7 @@ class DeliveryCollectRecordsController < ApplicationController
 
     respond_to do |format|
       if @delivery_collect_record.save
-        format.html { redirect_to delivery_collect_record_url(@delivery_collect_record), notice: "Delivery collect record was successfully created." }
+        format.html { redirect_to employee_delivery_collect_records_path(@delivery_collect_record.employee_id), notice: "Delivery collect record was successfully created." }
         format.json { render :show, status: :created, location: @delivery_collect_record }
       else
         format.html { render :new, status: :unprocessable_entity }

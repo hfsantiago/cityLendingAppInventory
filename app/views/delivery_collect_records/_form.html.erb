@@ -45,7 +45,9 @@
     <%= form.label :devolucion_estado_equipo, style: "display: block" %>
     <%= form.text_area :devolucion_estado_equipo, disabled: delivery_collect_record.is_delivery %>
   </div>
-
+  <div>
+    <%= form.hidden_field :employee_id %>
+  </div>
   <div>
     <%= form.hidden_field :delivery_collect_record_assets_attributes %>
     <%= form.submit %>

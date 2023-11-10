@@ -6,7 +6,7 @@
   <% @delivery_collect_records.each do |delivery_collect_record| %>
     <%= render delivery_collect_record %>
     <p>
-      <%= link_to "Show this delivery collect record", delivery_collect_record %>
+      <%= link_to "Show this delivery collect record", employee_delivery_collect_record_path(@employee, delivery_collect_record) %>
     </p>
   <% end %>
 </div>
