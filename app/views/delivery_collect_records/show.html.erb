@@ -3,8 +3,8 @@
 <%= render @delivery_collect_record %>
 
 <div>
-  <%= link_to "Edit this delivery collect record", edit_delivery_collect_record_path(@delivery_collect_record) %> |
-  <%= link_to "Back to delivery collect records", delivery_collect_records_path %>
+  <%= link_to "Edit this delivery collect record", edit_employee_delivery_collect_record_path(@delivery_collect_record.employee, @delivery_collect_record) %> |
+  <%= link_to "Back to delivery collect records", employee_delivery_collect_records_path(@delivery_collect_record.employee) %>
 
   <%= button_to "Destroy this delivery collect record", @delivery_collect_record, method: :delete %>
 </div>
